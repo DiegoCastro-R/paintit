@@ -9,7 +9,7 @@ O teste pode ser feito por qualquer nível de profissional, contudo o critério 
 
 ## Instruções
 
-1. Crie um repositório  para o versionamento do seu projeto.
+1. Crie um repositório para o versionamento do seu projeto.
 2. Siga a instruções de desenvolvimento
 3. Coloque um readme.md no projeto explicando como instalar e rodar o projeto
 4. Adicione ao repositório o usuário @thiagomontini (bitbucket, gitlab ou github)
@@ -30,10 +30,10 @@ Com base na quantidade necessária o sistema deve apontar tamanhos de lata de ti
 6. Cada litro de tinta é capaz de pintar 5 metros quadrados.
 7. Não considerar teto nem piso.
 8. As variações de tamanho das latas de tinta são:
-    - 0,5 L
-    - 2,5 L
-    - 3,6 L
-    - 18 L
+   - 0,5 L
+   - 2,5 L
+   - 3,6 L
+   - 18 L
 
 ## Requistos técnicos
 
@@ -51,7 +51,6 @@ Torne o projeto fácil de ser executado (crie um passo a passo e/ou utilize dock
 - Versionamento correto
 - Escalabilidade
 - Testabilidade
-
 
 ## Dicas
 

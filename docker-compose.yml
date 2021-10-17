@@ -1,9 +1,25 @@
-version: '3.9'
+version: "3.9"
 services:
+  api_gateway:
+    restart: always
+    build:
+      context: ./api_gateway
+    ports:
+      - 4001:4001
+    volumes:
+      - .:/api_gateway
+  api_auth:
+    restart: always
+    build:
+      context: ./api_auth
+    ports:
+      - 4002:4002
+    volumes:
+      - .:/api_gateway
   api_core:
     restart: always
-    context: ./api_core
-    build: .
+    build:
+      context: ./api_core
     ports:
       - 4003:4003
     volumes:
@@ -14,5 +30,11 @@ services:
       - 27017:27017
     volumes:
       - mongodb:/data/db
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
 volumes:
   mongodb:

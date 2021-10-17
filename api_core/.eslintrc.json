@@ -21,6 +21,12 @@
         "no-trailing-spaces": "off",
         "import/extensions": "off",
         "import/no-unresolved": "off",
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "consistent-return": "off",
+        "implicit-arrow-linebreak": "off",
+        "function-paren-newline": "off",
+        "comma-dangle": "off",
+        "no-restricted-syntax": "off",
+        "max-len": "off"
     }
 }

@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/DiegoCastro-R/paintit/issues"
   },
-  "homepage": "https://github.com/DiegoCastro-R/paintit#readme"
+  "homepage": "https://github.com/DiegoCastro-R/paintit#readme",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
 }

@@ -10,8 +10,6 @@ export const logoutSessionService = async (refreshToken: string) => {
       console.log(err.message);
       throw new createError.InternalServerError();
     }
-
-    console.log(val);
+    return;
   });
-  return { success: true, message: "session succesfully ended" };
 };

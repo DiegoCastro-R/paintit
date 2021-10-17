@@ -1,3 +1,3 @@
 import { createUserService } from "./createUserService";
-
-export { createUserService };
+import { getUserProfileService } from "./getUserProfileService";
+export { createUserService, getUserProfileService };

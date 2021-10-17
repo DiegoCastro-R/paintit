@@ -18,3 +18,15 @@ export const registerUser = async (req: Request, res: Response) => {
     return res.json(err);
   }
 };
+
+export const getUserProfile = async (req: Request, res: Response) => {
+  try {
+    const userId = req.payload?.aud;
+    if (!userId) throw new HttpError.BadRequest();
+    await UsersService.getUserProfileService(String(userId)).then((result) => {
+      return res.json(result);
+    });
+  } catch (err) {
+    return res.json(err);
+  }
+};

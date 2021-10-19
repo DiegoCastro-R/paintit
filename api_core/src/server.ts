@@ -1,14 +1,14 @@
 // external libs import
 import * as dotenv from 'dotenv';
 import express from 'express';
-// import moongose from 'mongoose';
+import moongose from 'mongoose';
 import cors from 'cors';
 import helmet from 'helmet';
 
 // internal imports
 
 import * as middleware from './middleware';
-// import * as mongoDBConnection from './config/db/mongodb/connection';
+import * as mongoDBConnection from './config/db/mongodb/connection';
 
 import AppRouter from './routes';
 
@@ -35,11 +35,11 @@ app.listen(PORT, () => {
   console.log(`✅ Listening on port ${PORT}`);
 });
 
-// moongose
-//   .connect(mongoDBConnection.url, mongoDBConnection.options)
-//   .then(() => {
-//     console.log('✅ MongoDB is connected');
-//   })
-//   .catch((err) => {
-//     console.log(`🔴  ${err}`);
-//   });
+moongose
+  .connect(mongoDBConnection.url, mongoDBConnection.options)
+  .then(() => {
+    console.log('✅ MongoDB is connected');
+  })
+  .catch((err) => {
+    console.log(`🔴  ${err}`);
+  });

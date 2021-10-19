@@ -1,6 +1,6 @@
 const servicesEndpoints = {
-  authService: "http://localhost:4001",
-  apiDoc: "http://localhost:4004",
+  authService: "http://api_auth:4002",
+  coreService: "http://api_core:4003",
 };
 
 export default servicesEndpoints;

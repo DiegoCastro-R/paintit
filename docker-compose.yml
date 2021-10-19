@@ -1,13 +1,14 @@
 version: "3.9"
 services:
-  # api_gateway:
-  #   restart: always
-  #   build:
-  #     context: ./api_gateway
-  #   ports:
-  #     - 4001:4001
-  #   volumes:
-  #     - .:/api_gateway
+  api_gateway:
+    restart: always
+    build:
+      context: ./api_gateway
+    ports:
+      - 4001:4001
+    volumes:
+      - .:/api_gateway
+    restart: always
   api_auth:
     restart: always
     build:
@@ -16,14 +17,16 @@ services:
       - 4002:4002
     volumes:
       - .:/api_gateway
-  # api_core:
-  #   restart: always
-  #   build:
-  #     context: ./api_core
-  #   ports:
-  #     - 4003:4003
-  #   volumes:
-  #     - .:/api_core
+    restart: always
+  api_core:
+    restart: always
+    build:
+      context: ./api_core
+    ports:
+      - 4003:4003
+    volumes:
+      - .:/api_core
+    restart: always      
   mongo:
     image: mongo
     restart: on-failure
@@ -31,11 +34,36 @@ services:
       - 27017:27017
     volumes:
       - mongodb:/data/db
-  # nginx:
-  #   restart: always
-  #   build:
-  #     context: ./nginx
-  #   ports:
-  #     - "80:80"
+    restart: always
+  redis:
+    container_name: redis
+    hostname: redis
+    image: sameersbn/redis:4.0.9-2
+    command: --port 6380
+    ports:
+      - "6380:6380"
+    expose:
+      - "6380"
+    volumes:
+      - type: volume
+        source: redis-data
+        target: /data
+    restart: always
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6380
+    ports:
+      - "8082:8081"
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
 volumes:
-  mongodb:
+  redis-data: {}
+  mongodb: {}

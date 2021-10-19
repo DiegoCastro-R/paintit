@@ -9,8 +9,6 @@ import { notFoundHandler } from "./middleware/not-found.middleware";
 import AppRouter from "./routes";
 import * as mongoDBConnection from "./config/db/mongodb/connection";
 
-//require("./config/db/redis/connection");
-
 dotenv.config();
 
 if (!process.env.PORT) {
